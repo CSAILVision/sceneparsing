@@ -67,6 +67,10 @@ Participants should check the zip file to make sure it could be decompressed cor
 ### Evaluation routines
 The performance of the segmentation algorithms will be evaluated by the mean of (1) pixel-wise accuracy over all the labeled pixels, and (2) IoU (intersection over union) avereaged over all the 150 semantic categories. 
 
+    Intersection over Union = (true positives) / (true positives + false positives + false negatives)
+    Pixel-wise Accuracy = correctly classifield pixels / labeled pixels
+    Final score = (Pixel-wise Accuracy + mean(Intersection over Union)) / 2
+
 ### Demo code
 In demoEvaluation.m, we have included our implementation of the standard evaluation metrics (pixel-wise accuracy and IoU) for the challenge. As mentioned before, we ignore pixels labeled with 0's.
 
