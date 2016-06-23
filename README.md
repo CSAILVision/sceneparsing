@@ -64,6 +64,9 @@ Participants of the challenge are required to upload a zip file which contains t
 
 Participants should check the zip file to make sure it could be decompressed correctly. 
 
+### Interclass similarity
+Some of the semantic classes in this dataset show some level of visual and semantic similarities across them. In order to quantify such similarities we include a matrix in human_semantic_similarity.mat, which includes human-perceived similarities between the 150 categories and can be used to train the segmentation models. In demoSimilarity.m, we show how to use that file. 
+
 ### Evaluation routines
 The performance of the segmentation algorithms will be evaluated by the mean of (1) pixel-wise accuracy over all the labeled pixels, and (2) IoU (intersection over union) avereaged over all the 150 semantic categories. 
 
