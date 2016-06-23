@@ -55,7 +55,9 @@ the testing images will be released in a separate file in the middle Auguest. Th
     images/testing/ADE_test_00000001.jpg
         ...
 
-objectInfo150.txt contains the information about the labels of the 150 semantic categories, including indices and pixel ratios.
+Note: annotations masks contain labels ranging from 0 to 150, where 0 refers to "other objects". We do not consider those pixels in our evaluation.
+
+objectInfo150.txt contains the information about the labels of the 150 semantic categories, including indices, pixel ratios and names.
 
 ### Submission format
 Participants of the challenge are required to upload a zip file which contains the predicted annotation mask for the given testing images to the ILSVRC website. The naming of the predicted annotation mask should be the same as the name of the testing images, while the filename extension should be png instead of jpg. For example, the predicted annotation mask for file ADE_test_00000001.jpg should be ADE_test_00000001.png.
@@ -66,10 +68,14 @@ Participants should check the zip file to make sure it could be decompressed cor
 The performance of the segmentation algorithms will be evaluated by the mean of (1) pixel-wise accuracy over all the labeled pixels, and (2) IoU (intersection over union) avereaged over all the 150 semantic categories. 
 
 ### Demo code
-In demoEvaluation.m, we include our standard evaluation code for the challenge. Please change the paths at the begining of the code accordingly to evalutate your own results. While running it correctly, you are expected to see output similar to:
+In demoEvaluation.m, we have included our implementation of the standard evaluation metrics (pixel-wise accuracy and IoU) for the challenge. As mentioned before, we ignore pixels labeled with 0's.
+
+Please change the paths at the begining of the code accordingly to evalutate your own results. While running it correctly, you are expected to see output similar to:
 
     Mean IoU over 150 classes: 0.1000
     Pixel-wise Accuracy: 100.00%
+
+In this case, we will take (0.1+1.0)/2=0.55 as your final score.
 
 We have also provided demoVisualization.m, which helps you to visualize individual image results.
 
