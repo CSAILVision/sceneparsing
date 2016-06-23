@@ -1,7 +1,6 @@
 function colormap = colorMap(imPred, imAnno, objectnames)
-%% This function encodes label maps into rgb images for better visualization
+%% This function generates colormaps with text annotations for visualization
 % imPred, imAnno: [h, w]
-% objectnames: {n, 1} where n is the number of classes
 % colormap: [h, w, 3]
 
 colormap = cell(2,8);
