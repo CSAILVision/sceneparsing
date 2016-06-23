@@ -67,6 +67,7 @@ The performance of the segmentation algorithms will be evaluated by the mean of 
 
 ### Demo code
 In demoEvaluation.m, we include our standard evaluation code for the challenge. Please change the paths at the begining of the code accordingly to evalutate your own results. While running it correctly, you are expected to see output similar to:
+
     Mean IoU over 150 classes: 0.1000
     Pixel-wise Accuracy: 100.00%
 
