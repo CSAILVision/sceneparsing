@@ -49,7 +49,8 @@ for i = 1: numel(filesPred)
         fprintf('Label image [%s] should be a gray-scale image!\n', fileLab); continue;
     end
     if size(imPred)~=size(imAnno)
-        fprintf('Label image [%s] should be the same size as label image!\n', fileLab); continue;
+        fprintf('Label image [%s] should have the same size as label image! Resizing...\n', fileLab);
+        imPred = imresize(imPred, size(imAnno));
     end
     
     % compute IoU
