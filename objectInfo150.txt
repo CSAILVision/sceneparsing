@@ -88,7 +88,7 @@ Idx	Ratio	Train	Val	Name
 87	0.0007	533	61	awning, sunshade, sunblind
 88	0.0007	1989	239	streetlight, street lamp
 89	0.0007	71	5	booth, cubicle, stall, kiosk
-90	0.0007	618	53	television receiver, television, television set, tv, tv set, idiot box, boob tube, telly, goggle box
+90	0.0007	618	53	television, television receiver, television set, tv, tv set, idiot box, boob tube, telly, goggle box
 91	0.0007	135	12	airplane, aeroplane, plane
 92	0.0007	83	5	dirt track
 93	0.0007	178	17	apparel, wearing apparel, dress, clothes
