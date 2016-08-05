@@ -1,4 +1,4 @@
-% This script shows how to use the similarity matrix 
+% This script demos how to use the similarity matrix 
 close all; clc; clear;
 
 % load the similarity data 
