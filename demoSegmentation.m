@@ -5,13 +5,13 @@ close all; clc; clear;
 addpath(genpath('visualizationCode'));
 
 
-% path to caffe
-addpath '/data/vision/torralba/gigaSUN/caffe-segmentation/matlab'
+% path to caffe (compile matcaffe first, or you could use python wrapper instead)
+addpath 'yourcaffe/matlab' 
 
 % select the pre-trained model. Use 'FCN' for 
 % the Fully Convolutional Network or 'Dilated' for DilatedNet
 % You can download the FCN model at 
-% http://places.csail.mit.edu/gigaSUN/ADE20K_web/model/FCN_iter_160000.caffemodel
+% http://sceneparsing.csail.mit.edu/model/FCN_iter_160000.caffemodel
 model_type = 'FCN'; %Dilated'
 if (model_type == 'FCN')
 	model_definition = 'models/deploy_FCN.prototxt';
