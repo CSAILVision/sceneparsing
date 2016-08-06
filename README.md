@@ -8,6 +8,7 @@ Table of contents:
     1. Image list and annotations
     2. Submission format
     3. Evaluation routines
+- Pretrained models
 
 Please open an issue or email Bolei Zhou (bzhou@csail.mit.edu) for questions, comments, and bug reports. 
 
@@ -86,8 +87,16 @@ In this case, we will take (0.1+1.0)/2=0.55 as your final score.
 
 We have also provided demoVisualization.m, which helps you to visualize individual image results.
 
+# Pre-trained models
+
+Here we release the pre-trained models for scene parsing. The demo code along with the model download links is at (https://github.com/CSAILVision/sceneparsing/blob/master/demoSegmentation.m). The models can be used for research only. The performance of the baselines is as follows,
+![Prediction](http://sceneparsing.csail.mit.edu/sceneparsing/acc.png)
+
+The qualitative results of the models are below:
+![Prediction](http://sceneparsing.csail.mit.edu/sceneparsing/segmentation.png)
+
 ## References
-If you find this scene parse challenge or the data useful, please cite the following paper:
+If you find this scene parse challenge or the data or the pre-trained models useful, please cite the following paper:
 
 Semantic Understanding of Scenes through ADE20K Dataset. B. Zhou, H. Zhao, X. Puig, S. Fidler, A. Barriuso and A. Torralba. arXiv (coming soon).
 
