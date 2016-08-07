@@ -16,8 +16,9 @@ model_type = 'FCN'; %Dilated'
 if (model_type == 'FCN')
 	model_definition = 'models/deploy_FCN.prototxt';
 	model_weights = 'FCN_iter_160000.caffemodel';
-else 
-	
+elseif (model_type == 'Dilated') 
+	model_definition = 'models/deploy_Dilated.prototxt';
+	model_weights = 'Dilated_iter_120000.caffemodel';
 end
 disp(model_definition)
 prediction_folder = sprintf('predictions_%s', model_type);
