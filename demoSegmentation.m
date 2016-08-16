@@ -15,10 +15,10 @@ addpath 'yourcaffe/matlab'
 % and the DilatedNet model at
 % http://sceneparsing.csail.mit.edu/model/DilatedNet_iter_120000.caffemodel
 model_type = 'FCN'; %Dilated'
-if (model_type == 'FCN')
+if (strcmp(model_type, 'FCN'))
 	model_definition = 'models/deploy_FCN.prototxt';
 	model_weights = 'FCN_iter_160000.caffemodel';
-elseif (model_type == 'Dilated') 
+elseif (strcmp(model_type, 'Dilated')) 
 	model_definition = 'models/deploy_DilatedNet.prototxt';
 	model_weights = 'DilatedNet_iter_120000.caffemodel';
 end
