@@ -52,21 +52,22 @@ for i = 1: numel(filesImg)
     im = imread(fileImg);
     imAnno = imread(fileAnno);
   	
-	% resize image to fit model description
-	im_inp = imresize(im, [384,384]); 
+    % resize image to fit model description
+    im_inp = double(imresize(im, [384,384])); 
 
-	% change RGB to BGR
-	im_inp = im_inp(:,:,end:-1:1);
+    % change RGB to BGR
+    im_inp = im_inp(:,:,end:-1:1);
 
-	% substract mean
-	im_inp = cat(3, im_inp(:,:,1)-109.5388, im_inp(:,:,2)-118.6897, im_inp(:,:,3)-124.6901);
-	
-	% obtain predicted image and resize to original size
-	imPred = net.forward({im_inp});
-	[~, imPred] = max(imPred{1},[],3);
-	imPred = uint8(imPred);
-	imPred = imresize(imPred, [size(im,1), size(im,2)], 'nearest');
-	imwrite(imPred, filePred);
+    % substract mean and transpose
+    im_inp = cat(3, im_inp(:,:,1)-109.5388, im_inp(:,:,2)-118.6897, im_inp(:,:,3)-124.6901);
+    im_inp = permute(im_inp, [2,1,3]);
+
+    % obtain predicted image and resize to original size
+    imPred = net.forward({im_inp});
+    [~, imPred] = max(imPred{1},[],3);
+    imPred = uint8(imPred')-1;
+    imPred = imresize(imPred, [size(im,1), size(im,2)], 'nearest');
+    imwrite(imPred, filePred);
  
     % color encoding
     rgbPred = colorEncode(imPred, colors);
