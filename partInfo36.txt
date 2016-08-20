@@ -1,0 +1,51 @@
+-- person --
+1	head		
+2	body		
+3	leg		
+
+-- lamp --
+4	shade		
+5	column		
+6	base		
+
+-- table --
+7	top		
+8	leg		
+9	drawer		
+
+-- chair --
+10	back		
+11	leg		
+12	seat		
+
+-- sofa --
+13	back		
+14	back pillow	
+15	arm		
+16	seat base	
+17	seat cushion	
+
+-- car --
+18	wheel		
+19	windshield	
+20	window		
+21	door		
+22	car body
+
+-- building --
+23	balcony		
+24	chimney		
+25	column		
+26	door		
+27	railing		
+28	roof		
+29	shop window	
+30	shutter		
+31	window		
+32	other
+
+-- bed --
+33	headboard	
+34	footboard	
+35	leg		
+36	other
