@@ -98,5 +98,5 @@ The qualitative results of the models are below:
 ## Reference
 If you find this scene parse challenge or the data or the pre-trained models useful, please cite the following paper:
 
-Semantic Understanding of Scenes through ADE20K Dataset. B. Zhou, H. Zhao, X. Puig, S. Fidler, A. Barriuso and A. Torralba. arXiv (coming soon).
+Semantic Understanding of Scenes through ADE20K Dataset. B. Zhou, H. Zhao, X. Puig, S. Fidler, A. Barriuso and A. Torralba. arXiv:1608.05442 (https://arxiv.org/pdf/1608.05442.pdf).
 
