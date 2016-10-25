@@ -87,7 +87,7 @@ In this case, we will take (0.1+1.0)/2=0.55 as your final score.
 
 We have also provided demoVisualization.m, which helps you to visualize individual image results.
 
-# Pre-trained models (on-going)
+# Pre-trained models
 
 Here we release the pre-trained models for scene parsing. The demo code along with the model download links is at (https://github.com/CSAILVision/sceneparsing/blob/master/demoSegmentation.m). The models can be used for research only. The detail of how the models are trained is in the reference below. The performance of the models on the validation set of MIT SceneParse150 is as follows,
 ![Prediction](http://sceneparsing.csail.mit.edu/sceneparsing/acc_1.png)
@@ -99,4 +99,13 @@ The qualitative results of the models are below:
 If you find this scene parse challenge or the data or the pre-trained models useful, please cite the following paper:
 
 Semantic Understanding of Scenes through ADE20K Dataset. B. Zhou, H. Zhao, X. Puig, S. Fidler, A. Barriuso and A. Torralba. arXiv:1608.05442 (https://arxiv.org/pdf/1608.05442.pdf).
+
+    @article{zhou2016semantic,
+      title={Semantic understanding of scenes through the ade20k dataset},
+      author={Zhou, Bolei and Zhao, Hang and Puig, Xavier and Fidler, Sanja and Barriuso, Adela and Torralba, Antonio},
+      journal={arXiv preprint arXiv:1608.05442},
+      year={2016}
+    }
+
+    
 
