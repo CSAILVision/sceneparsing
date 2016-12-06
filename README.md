@@ -4,16 +4,16 @@
 
 Table of contents:
 - Overview of scene parsing benchmark
-- Challenge details
+- Benchmark details
     1. Image list and annotations
     2. Submission format
     3. Evaluation routines
 - Pretrained models
 
-Please open an issue or email Bolei Zhou (bzhou@csail.mit.edu) for questions, comments, and bug reports. 
+Please open an issue for questions, comments, and bug reports. 
 
-##  Overview of Scene Parsing Challenge
-The goal of this benchmark is to segment and parse an image into different image regions associated with semantic categories, such as sky, road, person, and bed. It is similar to semantic segmentation tasks in COCO and Pascal Dataset, but the data is more scene-centric and with a diverse range of object categories. The data for this challenge comes from ADE20K Dataset (the full dataset will be released after the challenge) which contains more than 20K scene-centric images exhaustively annotated with objects and object parts. Specifically, the challenge data is divided into 20K images for training, 2K images for validation, and another batch of held-out images for testing. There are in total 150 semantic categories included in the challenge for evaluation, which include stuffs like sky, road, grass, and discrete objects like person, car, bed. Note that non-uniform distribution of objects occurs in the images, mimicking a more natural object occurrence in daily scenes.
+##  Overview of Scene Parsing Benchmark
+The goal of this benchmark is to segment and parse an image into different image regions associated with semantic categories, such as sky, road, person, and bed. It is similar to semantic segmentation tasks in COCO and Pascal Dataset, but the data is more scene-centric and with a diverse range of object categories. The data for this benchmark comes from ADE20K Dataset (the full dataset will be released after the benchmark) which contains more than 20K scene-centric images exhaustively annotated with objects and object parts. Specifically, the benchmark data is divided into 20K images for training, 2K images for validation, and another batch of held-out images for testing. There are in total 150 semantic categories included in the benchmark for evaluation, which include stuffs like sky, road, grass, and discrete objects like person, car, bed. Note that non-uniform distribution of objects occurs in the images, mimicking a more natural object occurrence in daily scenes.
 
 The webpage of the benchmark is at http://sceneparsing.csail.mit.edu. You could download the data at the webpage.
 
@@ -76,7 +76,7 @@ The performance of the segmentation algorithms will be evaluated by the mean of 
     Final score = (Pixel-wise Accuracy + mean(Intersection over Union)) / 2
 
 ### Demo code
-In demoEvaluation.m, we have included our implementation of the standard evaluation metrics (pixel-wise accuracy and IoU) for the challenge. As mentioned before, we ignore pixels labeled with 0's.
+In demoEvaluation.m, we have included our implementation of the standard evaluation metrics (pixel-wise accuracy and IoU) for the benchmark. As mentioned before, we ignore pixels labeled with 0's.
 
 Please change the paths at the begining of the code accordingly to evalutate your own results. While running it correctly, you are expected to see output similar to:
 
@@ -103,7 +103,7 @@ The qualitative results of the models are below:
 
 ## Reference
 
-If you find this scene parse challenge or the data or the pre-trained models useful, please cite the following paper:
+If you find this scene parse benchmark or the data or the pre-trained models useful, please cite the following paper:
 
 Semantic Understanding of Scenes through ADE20K Dataset. B. Zhou, H. Zhao, X. Puig, S. Fidler, A. Barriuso and A. Torralba. arXiv:1608.05442 (https://arxiv.org/pdf/1608.05442.pdf).
 
