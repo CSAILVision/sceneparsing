@@ -87,6 +87,11 @@ In this case, we will take (0.1+1.0)/2=0.55 as your final score.
 
 We have also provided demoVisualization.m, which helps you to visualize individual image results.
 
+# Training code
+
+We released the training code for two popular frameworks, Caffe and Torch7 (https://github.com/CSAILVision/sceneparsing/tree/master/trainingCode).  
+You might need to modify the paths, and the data loader code accordingly to have all the things running on your own computer.
+
 # Pre-trained models
 
 Here we release the pre-trained models for scene parsing. The demo code along with the model download links is at (https://github.com/CSAILVision/sceneparsing/blob/master/demoSegmentation.m). The models can be used for research only. The detail of how the models are trained is in the reference below. The performance of the models on the validation set of MIT SceneParse150 is as follows,
