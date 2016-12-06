@@ -1,0 +1,16 @@
+net: "train_DilatedNet.prototxt"
+test_initialization: false
+test_iter: 10
+test_interval: 1000000
+test_compute_loss: true
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 100000
+display: 10
+momentum: 0.9
+max_iter: 200000
+weight_decay: 0.0005
+snapshot: 10000
+snapshot_prefix: "snapshot/dilatedNet"
+solver_mode: GPU
