@@ -25,11 +25,13 @@ function net_utils.build_dilatednet(net, num_class)
     elseif (i==24 or i==26 or i==28) then
       local conv_layer = nn.SpatialDilatedConvolution(512,512,3,3,1,1,2,2,2,2)
       conv_layer.weight:copy(layer.weight)
+      conv_layer.bias:copy(layer.bias)
       model:add(conv_layer)
 
     elseif i==30 then
       local conv_layer = nn.SpatialDilatedConvolution(512,4096,7,7,1,1,12,12,4,4)
       conv_layer.weight:copy(layer.weight)
+      conv_layer.bias:copy(layer.bias)
       model:add(conv_layer)
     else
       model:add(layer)
