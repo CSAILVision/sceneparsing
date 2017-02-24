@@ -1,6 +1,5 @@
 require 'torch'
 require 'nn'
-require 'nngraph'
 require 'loadcaffe'
 require 'optim'
 
@@ -35,7 +34,7 @@ cmd:option('-max_iters', -1, 'max iterations, -1 = forever')
 cmd:option('-batch_size', 5,'batch size')
 
 -- Optimization parameters
-cmd:option('-learning_rate',1e-4,'learning rate')
+cmd:option('-learning_rate',1e-3,'learning rate')
 cmd:option('-momentum', 0.9,'momentum')
 cmd:option('-weight_decay', 5e-4, 'L2 weight decay')
 
@@ -89,7 +88,7 @@ cnn = net_utils.build_dilatednet(model_caffe, opt.num_class)
 
 local label_weights = torch.ones(opt.num_class)
 -- the first class is ignored
-label_weights[1] = 0
+label_weights[1] = 0.
 crit = cudnn.SpatialCrossEntropyCriterion(label_weights)
 
 -- ship everything to GPU
@@ -106,9 +105,8 @@ collectgarbage()
 -------------------------------------------------------------------------------
 -- Evaluation
 -------------------------------------------------------------------------------
-local function evalFunc(split, evalopt)
-  local val_images_use = evalopt.val_images_use
-
+local function evalFunc()
+  local split = 'val'
   cnn:evaluate()
   loader:resetIterator(split)
   local n = 0
@@ -116,18 +114,17 @@ local function evalFunc(split, evalopt)
   local loss_evals = 0
   local pixel_correct = 0
   local pixel_labeled = 0
-  local predictions = {}
 
   while true do
 
     -- fetch a batch of data
     local data = loader:nextBatch{batch_size = opt.batch_size, split = split}
-    data.images, data.annotations = net_utils.prepro(data.images, data.annotations, opt.gpuid >= 0) -- preprocess in place, and don't augment
+    data.images, data.annotations = net_utils.prepro(data.images, data.annotations, opt.gpuid >= 0)
     n = n + data.images:size(1)
 
     -- forward the model to get loss
     local feats = cnn:forward(data.images)
-  	local loss = crit:forward(feats, data.annotations)
+    local loss = crit:forward(feats, data.annotations)
 
     loss_sum = loss_sum + loss
     loss_evals = loss_evals + 1
@@ -149,13 +146,12 @@ local function evalFunc(split, evalopt)
     print(string.format('evaluating validation performance... %d/%d (%f)', ix0-1, ix1, loss))
 
     if loss_evals % 10 == 0 then collectgarbage() end
-    if data.bounds.wrapped then break end -- the split ran out of data, lets break out
-    if n >= val_images_use then break end -- we've used enough images
+    if n >= opt.val_images_use then break end
   end
 
   collectgarbage() 
 
-  return loss_sum/loss_evals, pixel_correct/pixel_labeled, predictions
+  return loss_sum/loss_evals, pixel_correct/pixel_labeled
 end
 
 -------------------------------------------------------------------------------
@@ -177,11 +173,6 @@ local function lossFunc()
   -- backprop
   local dfeats = crit:backward(feats, data.annotations)
   local dx = cnn:backward(data.images, dfeats)
-
-  -- apply L2 regularization
-  if opt.weight_decay > 0 then
-    net_grads:add(opt.weight_decay, net_params)
-  end
 
   local losses = { total_loss = loss }
   return losses
@@ -211,7 +202,7 @@ while true do
   -- save checkpoint
   if (iter % opt.save_checkpoint_every == 0 or iter == opt.max_iters) then
     -- evaluate the validation performance
-    local val_loss, val_accuracy, val_predictions = evalFunc('val', {val_images_use = opt.val_images_use})
+    local val_loss, val_accuracy = evalFunc()
     print('validation loss: ', val_loss)
     print('validation accuracy: ', val_accuracy)
     val_loss_history[iter] = val_loss
