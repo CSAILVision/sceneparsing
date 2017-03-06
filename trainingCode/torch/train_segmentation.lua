@@ -142,7 +142,7 @@ local function evalFunc()
 
     -- check if we evaluate till the end
     local ix0 = data.bounds.it_pos_now
-    local ix1 = math.min(data.bounds.it_max, val_images_use)
+    local ix1 = math.min(data.bounds.it_max, opt.val_images_use)
     print(string.format('evaluating validation performance... %d/%d (%f)', ix0-1, ix1, loss))
 
     if loss_evals % 10 == 0 then collectgarbage() end
