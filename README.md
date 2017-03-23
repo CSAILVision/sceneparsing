@@ -105,6 +105,15 @@ The qualitative results of the models are below:
 
 If you find this scene parse benchmark or the data or the pre-trained models useful, please cite the following paper:
 
+Scene Parsing through ADE20K Dataset. B. Zhou, H. Zhao, X. Puig, S. Fidler, A. Barriuso and A. Torralba. Computer Vision and Pattern Recognition (CVPR), 2017.
+
+    @inproceedings{zhou2017scene,
+        title={Scene Parsing through ADE20K Dataset},
+        author={Zhou, Bolei and Zhao, Hang and Puig, Xavier and Fidler, Sanja and Barriuso, Adela and Torralba, Antonio},
+        booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+        year={2017}
+    }
+    
 Semantic Understanding of Scenes through ADE20K Dataset. B. Zhou, H. Zhao, X. Puig, S. Fidler, A. Barriuso and A. Torralba. arXiv:1608.05442 (https://arxiv.org/pdf/1608.05442.pdf).
 
     @article{zhou2016semantic,
@@ -114,5 +123,4 @@ Semantic Understanding of Scenes through ADE20K Dataset. B. Zhou, H. Zhao, X. Pu
       year={2016}
     }
 
-    
 
