@@ -6,7 +6,7 @@ display: 40
 average_loss: 20
 lr_policy: "fixed"
 # lr for unnormalized softmax
-base_lr: 1e-10
+base_lr: 1e-14
 # high momentum
 momentum: 0.99
 # no gradient accumulation
