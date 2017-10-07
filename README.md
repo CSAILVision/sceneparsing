@@ -1,5 +1,9 @@
 #  Development Kit for MIT Scene Parsing Benchmark
 
+[NEW!] Our PyTorch implementation is released in the following repository:
+
+https://github.com/hangzhaomit/semantic-segmentation-pytorch
+
 ## Introduction
 
 Table of contents:
@@ -89,7 +93,8 @@ We have also provided demoVisualization.m, which helps you to visualize individu
 
 # Training code
 
-We released the training code for two popular frameworks, Caffe and Torch7 (https://github.com/CSAILVision/sceneparsing/tree/master/trainingCode). You might need to modify the paths, and the data loader code accordingly to have all the things running on your own computer.
+We provide the training code for three popular frameworks, Caffe, Torch7 and PyTorch (https://github.com/CSAILVision/sceneparsing/tree/master/trainingCode). You might need to modify the paths, and the data loader code accordingly to have all the things running on your own computer.
+
 
 # Pre-trained models
 
