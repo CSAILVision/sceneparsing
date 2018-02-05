@@ -11,9 +11,9 @@ addpath 'yourcaffe/matlab'
 % select the pre-trained model. Use 'FCN' for 
 % the Fully Convolutional Network or 'Dilated' for DilatedNet
 % You can download the FCN model at 
-% http://sceneparsing.csail.mit.edu/model/FCN_iter_160000.caffemodel
+% http://sceneparsing.csail.mit.edu/model/caffe/FCN_iter_160000.caffemodel
 % and the DilatedNet model at
-% http://sceneparsing.csail.mit.edu/model/DilatedNet_iter_120000.caffemodel
+% http://sceneparsing.csail.mit.edu/model/caffe/DilatedNet_iter_120000.caffemodel
 model_type = 'FCN'; %Dilated'
 if (strcmp(model_type, 'FCN'))
 	model_definition = 'models/deploy_FCN.prototxt';
