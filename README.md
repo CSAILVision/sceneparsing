@@ -65,7 +65,7 @@ Note: annotations masks contain labels ranging from 0 to 150, where 0 refers to 
 objectInfo150.txt contains the information about the labels of the 150 semantic categories, including indices, pixel ratios and names.
 
 ### Submission format to the evaluation server
-To evaluate the algorithm on the test set of the benchmark (link: TBD), participants are required to upload a zip file which contains the predicted annotation mask for the given testing images to the evaluation server. The naming of the predicted annotation mask should be the same as the name of the testing images, while the filename extension should be png instead of jpg. For example, the predicted annotation mask for file ADE_test_00000001.jpg should be ADE_test_00000001.png.
+To evaluate the algorithm on the test set of the benchmark (link: http://sceneparsing.csail.mit.edu/eval/), participants are required to upload a zip file which contains the predicted annotation mask for the given testing images to the evaluation server. The naming of the predicted annotation mask should be the same as the name of the testing images, while the filename extension should be png instead of jpg. For example, the predicted annotation mask for file ADE_test_00000001.jpg should be ADE_test_00000001.png.
 
 Participants should check the zip file to make sure it could be decompressed correctly. 
 
